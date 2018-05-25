@@ -151,7 +151,7 @@ console.log(returnHello("World"));
 */
 
 //////////////////////
-
+/*
 // flow control
 
 // for of returns values
@@ -163,3 +163,34 @@ for(let val of [1, 2, 3]) {
 for(let val in [1, 2, 3]) {
     console.log(val);
 }
+*/
+
+///////////////
+
+// modules (classes)
+
+// modules expose some parts and hide others
+function Person() {
+    function test() {}
+
+    return {
+        sayHello() {
+            console.log("Hello!");
+        }
+    };
+}
+
+const a = Person();
+ // can do
+a.sayHello();
+//cannot do
+a.test();
+
+class Person {
+    constructor() {}
+
+    sayHello() {
+        console.log("Hello!");
+    }
+}
+
