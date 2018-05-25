@@ -129,7 +129,7 @@ if(true) {
 */
 
 ////////////////
-
+/*
 // functions
 
 function sayHello(name) {
@@ -148,3 +148,18 @@ sayHelloAssigned("World");
 const returnHello = name => `Hello ${ name }`;
 
 console.log(returnHello("World"));
+*/
+
+//////////////////////
+
+// flow control
+
+// for of returns values
+for(let val of [1, 2, 3]) {
+    console.log(val);
+}
+
+// for in returns index
+for(let val in [1, 2, 3]) {
+    console.log(val);
+}
