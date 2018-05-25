@@ -127,3 +127,24 @@ if(true) {
     value = 124
 }
 */
+
+////////////////
+
+// functions
+
+function sayHello(name) {
+    console.log(`Hello, ${ name }!`);
+}
+
+sayHello("World");
+
+// can also do
+const sayHelloAssigned =  (name) => {
+    console.log(`Hello, ${ name }!`);
+};
+
+sayHelloAssigned("World");
+
+const returnHello = name => `Hello ${ name }`;
+
+console.log(returnHello("World"));
