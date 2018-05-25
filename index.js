@@ -1,8 +1,7 @@
 /*
-*how basic js variables work
-* null variable and a declared variable with no current value
-*/
+//how basic js variables work
 
+// null variable and a declared variable with no current value
 var myNullVariable = null;
 var myUndefinedVariable;
 
@@ -11,8 +10,8 @@ var trueVariable = true;
 var falseVariable = false;
 
 // basic numerical values, positive, negative, and float/decimal
-var numberOneVariaable = 1;
-var negativeOneVarible = -1;
+var numberOneVariable = 1;
+var negativeOneVariable = -1;
 var OnePointOne = 1.1;
 
 // more decimal/float examples that when added show under the hood js
@@ -41,4 +40,14 @@ var nameTwo = Symbol("Andrew");
 console.log(nameOne == nameTwo);
 console.log(nameOne);
 console.log(nameTwo);
+*/
 
+//strings in js and basic concatenation
+var strOne = "Hello";
+var strTwo = ", World";
+var helloWorldStr = strOne + strTwo;
+
+console.log(helloWorldStr);
+// this must start with ` the symbol under the tilda (backtick)
+// js will also keep whatever line spacing you use
+console.log(`The value of strOne and strTwo concatenation is: ${ strOne + strTwo }');
