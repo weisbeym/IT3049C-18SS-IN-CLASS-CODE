@@ -50,4 +50,4 @@ var helloWorldStr = strOne + strTwo;
 console.log(helloWorldStr);
 // this must start with ` the symbol under the tilda (backtick)
 // js will also keep whatever line spacing you use
-console.log(`The value of strOne and strTwo concatenation is: ${ strOne + strTwo }');
+console.log(`The value of strOne and strTwo concatenation is: ${ strOne + strTwo }`);
