@@ -86,3 +86,44 @@ var myUpdatedNumArray = myNumArray.map(function(currentIterationValue) {
 
 console.log(myUpdatedNumArray);
 */
+
+//////////////////
+
+//scope in js
+
+/*
+var test = 123;
+
+if(true) {
+    test += 1;
+}
+function incrementTest() {
+    //test += 1;
+
+    var test2 = test + 1;
+}
+
+incrementTest();
+
+// gives an error because test2 is not global it os local to the function
+console.log(test2);
+
+
+// instead of var we use let and const
+let randomNum = 555;
+
+//const is a assigns a consistent assignment not value
+const test = {
+    value: 123
+};
+
+//doesn't work
+if(true) {
+    test = {value: 124}
+}
+
+//does work
+if(true) {
+    value = 124
+}
+*/
