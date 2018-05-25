@@ -168,7 +168,7 @@ for(let val in [1, 2, 3]) {
 ///////////////
 
 // modules (classes)
-
+/*
 // modules expose some parts and hide others
 function Person() {
     function test() {}
@@ -185,7 +185,7 @@ const a = Person();
 a.sayHello();
 //cannot do
 a.test();
-
+*/
 class Person {
     constructor() {}
 
