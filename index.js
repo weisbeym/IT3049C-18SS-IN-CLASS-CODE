@@ -1,46 +1,72 @@
 "use strict";
-/*
-//module-3: DOM, JQuery, Forms, and Regular Expressions
 
-// Make a variable referencing a HTML element
-const helloHeader = document.getElementById("helloHeader");
+const startButton = document.getElementById("startButton");
 
-// gets all elements with this tag
-const helloParagraph = document.getElementsByTagName("p");
+const welcomeScreen = document.getElementById("welcomeScreen");
+const gameScreen = document.getElementById("gameScreen");
 
-// change that element, in this case making the txt red
-helloHeader.style.color ="red";
+const gameForm = document.getElementById("gameForm");
 
+const userInput = document.getElementById("UserInput");
 
-// creates a new element, is not automatically placed in the document
-const testParagraph = document.createElement("p");
+let game;
 
-// adds txt within the parent element, in this case our empty paragraph, it won't pick up the HTML tags
-//testParagraph.innerText = '<span style="color: blue">Hello</span>'
+class RandomNumberGuessingGame {
 
-//this version adds HTML inside the parent element, so it will pick up the spans this time
-//testParagraph.innerHTML = '<span style="color: blue">Hello</span>'
+    constructor() {
+        this.randomNumber = Math.floor(Math.random() * 10);
+        this.numberOfGuesses = 0;
+        console.log(this.randomNumber);
+    }
 
-// this places a child element into the document body, in this case the paragraph we made above
-document.body.appendChild(testParagraph);
+    guess(val) {
+        this.numberOfGuesses += 1;
 
-const helloTextNode = document.createTextNode("Hello");
-testParagraph.appendChild(helloTextNode);
+        return this.randomNumber === val;
+    }
+}
 
-console.log(testParagraph);
-*/
+startButton.addEventListener("click", function (startButtonClickEvent) {
 
-// JQuery, was more useful when browsers were less similar/consistent
+    startButtonClickEvent.preventDefault();
 
-const helloHeader = $("#helloHeader");
-//const helloParagraph = JQuery("p");
+    console.log("User clicked the start button!");
 
-helloHeader.css("color", "red");
+    welcomeScreen.classList.add("hidden");
 
-const testParagraph = $("</P>")
+    gameScreen.classList.remove("hidden");
 
-testParagraph.text("Hello");
+    game = new RandomNumberGuessingGame();
 
-testParagraph.css("color", "blue");
+});
 
-$("body").append(testParagraph);
+gameForm.addEventListener("submit", function (gameFormSubmitEvent) {
+    gameFormSubmitEvent.preventDefault();
+
+    if(!userInput.value) {
+        return alert("You must provide an inout!");
+    }
+
+    const guess = parseInt(userInput.value);
+
+    if(isNaN(guess)) {
+        userInput.value = "";
+
+        return alert("You must provide a valid number guess!");
+    }
+
+    const didWin = game.guess(guess);
+
+    if (!didWin) {
+        userInput.value = "";
+
+        return alert("Incorrect! Please try again.");
+    }
+
+    userInput.value = "";
+
+    alert(`You won in ${  game.numberOfGuesses } guesses!`);
+
+    gameScreen.classList.add("hidden");
+    welcomeScreen.classList.remove("hidden");
+});
