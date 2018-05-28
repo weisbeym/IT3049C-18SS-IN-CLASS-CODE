@@ -1,4 +1,5 @@
 "use strict";
+/*
 //module-3: DOM, JQuery, Forms, and Regular Expressions
 
 // Make a variable referencing a HTML element
@@ -27,3 +28,19 @@ const helloTextNode = document.createTextNode("Hello");
 testParagraph.appendChild(helloTextNode);
 
 console.log(testParagraph);
+*/
+
+// JQuery, was more useful when browsers were less similar/consistent
+
+const helloHeader = $("#helloHeader");
+//const helloParagraph = JQuery("p");
+
+helloHeader.css("color", "red");
+
+const testParagraph = $("</P>")
+
+testParagraph.text("Hello");
+
+testParagraph.css("color", "blue");
+
+$("body").append(testParagraph);
