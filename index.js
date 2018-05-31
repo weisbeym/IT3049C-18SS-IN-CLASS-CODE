@@ -7,7 +7,7 @@ const gameScreen = document.getElementById("gameScreen");
 
 const gameForm = document.getElementById("gameForm");
 
-const userInput = document.getElementById("UserInput");
+const userInput = document.getElementById("userInput");
 
 let game;
 
